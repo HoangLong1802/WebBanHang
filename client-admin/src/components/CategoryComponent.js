@@ -19,14 +19,14 @@ class Category extends Component {
           key={item._id}
           className="datatable"
           onClick={() => this.trItemClick(item)}
-        >
+        > 
           <td>{item._id}</td>
           <td>{item.name}</td>
         </tr>
       );
     });
     return (
-      <div>
+      <div className="align-content--wrap">
         <div className="float-left">
           <h2 className="text-center">CATEGORY LIST</h2>
           <table className="datatable" border="1">

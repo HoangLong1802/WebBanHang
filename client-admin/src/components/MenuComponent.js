@@ -8,6 +8,7 @@ class Menu extends Component {
     return (
       <div className="border-bottom">
         <div className="float-left">
+          <Link className="logo" to="/admin/home"></Link>
           <ul className="menu">
             <li className="menu">
               <Link to="/admin/home">Home</Link>
@@ -26,7 +27,7 @@ class Menu extends Component {
             </li>
           </ul>
         </div>
-        <div className="float-right">
+        <div className="float-right--menu">
           Hello <b>{this.context.username}</b> |{" "}
           <Link to="/admin/home" onClick={() => this.lnkLogoutClick()}>
             Logout

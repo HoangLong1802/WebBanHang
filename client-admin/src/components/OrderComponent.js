@@ -45,7 +45,7 @@ class Order extends Component {
       });
     }
     return (
-      <div>
+      <div className="align-content--wrap">
         <div className="align-center">
           <h2 className="text-center">ORDER LIST</h2>
           <table className="datatable" border="1">

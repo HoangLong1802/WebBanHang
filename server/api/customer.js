@@ -9,8 +9,13 @@ const CategoryDAO = require("../models/CategoryDAO");
 const ProductDAO = require("../models/ProductDAO");
 const CustomerDAO = require("../models/CustomerDAO");
 const OrderDAO = require("../models/OrderDAO");
+const ContactDAO = require("../models/ContactDAO");
 
-
+router.get("/contacts", async function (req,res){
+  const contacts = await ContactDAO.selectAllContact();
+  res.json(contacts);
+}
+)
 // category
 router.get("/categories", async function (req, res) {
   const categories = await CategoryDAO.selectAll();
@@ -18,11 +23,11 @@ router.get("/categories", async function (req, res) {
 });
 // product
 router.get("/products/new", async function (req, res) {
-  const products = await ProductDAO.selectTopNew(3);
+  const products = await ProductDAO.selectTopNew(6);
   res.json(products);
 });
 router.get("/products/hot", async function (req, res) {
-  const products = await ProductDAO.selectTopHot(3);
+  const products = await ProductDAO.selectTopHot(6);
   res.json(products);
 });
 router.get("/products/category/:cid", async function (req, res) {
@@ -152,5 +157,9 @@ router.get('/orders/customer/:cid', JwtUtil.checkToken, async function (req, res
   const _cid = req.params.cid;
   const orders = await OrderDAO.selectByCustID(_cid);
   res.json(orders);
+});
+router.get("/products", async function (req, res) {
+  const product = await ProductDAO.selectAll();
+  res.json(product);
 });
 module.exports = router;

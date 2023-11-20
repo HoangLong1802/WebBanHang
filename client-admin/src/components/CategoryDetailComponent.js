@@ -28,7 +28,7 @@ class CategoryDetail extends Component {
                       this.setState({ txtID: e.target.value });
                     }}
                     readOnly={true}
-                  />
+                    />
                 </td>
               </tr>
               <tr>
@@ -40,7 +40,7 @@ class CategoryDetail extends Component {
                     onChange={(e) => {
                       this.setState({ txtName: e.target.value });
                     }}
-                  />
+                    />
                 </td>
               </tr>
               <tr>
@@ -50,17 +50,17 @@ class CategoryDetail extends Component {
                     type="submit"
                     value="ADD NEW"
                     onClick={(e) => this.btnAddClick(e)}
-                  />
+                    />
                   <input
                     type="submit"
                     value="UPDATE"
                     onClick={(e) => this.btnUpdateClick(e)}
-                  />
+                    />
                   <input
                     type="submit"
                     value="DELETE"
                     onClick={(e) => this.btnDeleteClick(e)}
-                  />
+                    />
                 </td>
               </tr>
             </tbody>
